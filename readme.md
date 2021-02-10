@@ -19,6 +19,7 @@ The register API receives an `email` and a `password` in its body and register a
 ### Login
 
 The login API also receives an `email` and a `password` and tries to log user in.
+
 If the user is registered then it returns an `access_token, that is required by the recommendation API.
 
 ### Insurances
@@ -38,6 +39,7 @@ The body of the request is composed of the fields of a questionnaire:
 * `email`
 
 If the email passed is the same as the email which is logged in, then the user data is updated with the passed information, before requesting the insurance recommendation.
+
 Otherwise it just returns the recommendation.
 
 ## Testing
@@ -47,5 +49,13 @@ The project provides a Postman environment and collection with samples for calli
 ### How to test
 
 The insurance API must be called once with the new insurances, so they can be registered and later recommended.
+
 If the insurances already exist, they will not be saved again.
+
 Calling the recommendation API without saving the insurances will work, however it will return a list of empty results, since the recommendation is based on searching specific insurances for each variation of inputs.
+
+## Trying it live
+
+The project is deploy as a Docker container in an instance on Google Cloud Provider.
+
+So it can be run directly from Postman by running the collection under the gcp folder.
