@@ -18,7 +18,7 @@ class Production:
     SECRET_KEY = os.getenv('SECRET_KEY')
 
     # SQLAlchemy
-    SQLALCHEMY_DATABASE_URI = os.getenv('SQLALCHEMY_DATABASE_URI')
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(BASEDIR, 'insurance_db/insurance.db')
     SQLALCHEMY_TRACK_MODIFICATIONS = os.getenv('SQLALCHEMY_TRACK_MODIFICATIONS')
 
 
@@ -31,7 +31,7 @@ class Develop:
     SECRET_KEY = os.getenv('DEV_SECRET_KEY')
 
     # Database
-    SQLALCHEMY_DATABASE_URI = os.getenv('DEV_SQLALCHEMY_DATABASE_URI')
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(BASEDIR, 'insurance_db/insurance.db')
     SQLALCHEMY_TRACK_MODIFICATIONS = os.getenv('DEV_SQLALCHEMY_TRACK_MODIFICATIONS')
 
 
@@ -44,5 +44,5 @@ class Test:
     SECRET_KEY = os.getenv('TEST_SECRET_KEY')
 
     # Database
-    SQLALCHEMY_DATABASE_URI = os.getenv('TEST_SQLALCHEMY_DATABASE_URI')
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(BASEDIR, 'insurance_db/insurance_test.db')
     SQLALCHEMY_TRACK_MODIFICATIONS = os.getenv('DEV_SQLALCHEMY_TRACK_MODIFICATIONS')
