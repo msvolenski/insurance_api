@@ -58,4 +58,6 @@ Calling the recommendation API without saving the insurances will work, however 
 
 The project is deploy as a Docker container in an instance on Google Cloud Provider.
 
-So it can be run directly from Postman by running the collection under the gcp folder.
+So it can be run directly from Postman by running the insurance_api collection with the insurance_api environment.
+
+You have to add the correct IP for the GCP instance in the gcp_url environment variable. 
